@@ -45,6 +45,7 @@ public class VeiculoController {
         }
     }
 
+    @DeleteMapping("/{id}")
     public ResponseEntity<Veiculo> deleteVeiculo(@PathVariable Long id) {
         if (service.deletar(id)) {
             return ResponseEntity.noContent().build(); // 204 No Content Document

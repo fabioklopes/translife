@@ -24,6 +24,10 @@ public class VeiculoService {
         return repository.findById(id);
     }
 
+    public Optional<Veiculo> buscaPorPlate(String plate) {
+        return repository.findByPlates(plate);
+    }
+
     public Veiculo salvar(Veiculo veiculo) {
         return repository.save(veiculo);
     }

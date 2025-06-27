@@ -29,6 +29,13 @@ public class VeiculoController {
         return veiculo.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/placa/{plates}")
+    public ResponseEntity<Veiculo> getVeiculoByPlates(@PathVariable String plates) {
+        return service.buscaPorPlate(plates)
+                .map(veiculo -> new ResponseEntity<>(veiculo, HttpStatus.OK)) // Se encontrar, retorna 200 OK
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND)); // Se não encontrar, retorna 404 Not Found
+    }
+
     @PostMapping
     public ResponseEntity<Veiculo> createVeiculo(@RequestBody Veiculo veiculo) {
         Veiculo novoVeiculo = service.salvar(veiculo);

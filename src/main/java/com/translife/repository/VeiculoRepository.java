@@ -14,7 +14,6 @@ public interface VeiculoRepository extends JpaRepository<Veiculo, Long>{
      * create, read, update e delete.
      */
 
-    // Busca por placa
-    // Optional<Veiculo> findByPlatesOptional(String plates);
+    Optional<Veiculo> findByPlates(String plates);
 
 }

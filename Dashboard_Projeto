@@ -1,12 +1,12 @@
 Novas Features:
 	- Pickup (Serve para gerenciar as coletas de mercadorias)
-	- Vendor (Serve para gerenciar as lojas vendedoras/forncedoras)
+	- Vendor (Serve para gerenciar as lojas vendedoras/fornecedoras)
 	- Status 
 		Pickup: 
 			Solicitação em andamento;
 			Deslocamento para retirada do objeto;
 			Problemas na retirada
-				- Vendedos não separou o objeto
+				- Vendedor não separou o objeto
 				- Vendedor não emitiu NF ou NFe da venda
 				- Cliente cancelou a compra durante deslocamento
 			Objeto retirado com fornecedor; 

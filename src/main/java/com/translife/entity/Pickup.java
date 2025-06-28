@@ -8,6 +8,8 @@ public class Pickup {
 
     private Cliente client;
 
+    private String objectCode;
+
     private String volume; // Documento, pacote ou caixa
 
     private String collectionSource;

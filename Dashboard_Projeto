@@ -1,5 +1,5 @@
 Novas Features:
-	- Pickup (Serve para gerenciar as coletas de mercadorias)
+	- Coleta (Serve para gerenciar as coletas de mercadorias)
 	- Vendor (Serve para gerenciar as lojas vendedoras/fornecedoras)
 	- Status 
 		Pickup: 
@@ -21,3 +21,5 @@ Novas Features:
 				- Cliente não localizado (2)
 				- Cliente não localizado (3)
 		
+2025-07-24
+    Atualização das Classes Cleta e criação da classe VolumeType e Status

@@ -1,7 +1,8 @@
 package com.translife.service;
 
-import com.translife.entity.Pickup;
-import com.translife.repository.PickupRepository;
+import com.translife.entity.Coleta;
+import com.translife.entity.VolumeType;
+import com.translife.repository.ColetaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,29 +11,33 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PickupService {
+public class ColetaService {
 
     @Autowired
-    private PickupRepository repository;
+    private ColetaRepository repository;
 
-    public Pickup create(Pickup pickup) {
-        return repository.save(pickup);
+    public List<Coleta> findAll() {
+        return repository.findAll();
     }
 
-    public Optional<Pickup> findById(Long id) {
+    public Optional<Coleta> findById(Long id) {
         return repository.findById(id);
     }
 
-    public List<Pickup> findAll() {
-        return repository.findAll();
+    public Coleta save(Coleta coleta) {
+        return repository.save(coleta);
+    }
+
+    public void deleteById(Long id) {
+        repository.deleteById(id);
     }
 
     public String findByObjectCode(String objectCode) {
         return repository.findByObjectCode(objectCode);
     }
 
-    public String findByVolume(String volume) {
-        return repository.findByVolume(volume);
+    public String findByVolumeType(String volumeType) {
+        return repository.findByVolumeType(VolumeType.valueOf(volumeType));
     }
 
     public String findByCollectionSource(String collectionSource) {
@@ -51,10 +56,6 @@ public class PickupService {
         return repository.findByReceiptDestinationResponsible(receiptDestinationResponsible);
     }
 
-    public LocalDateTime findByCollectionDate(String collectionDate) {
-        return repository.findByCollectionDate(collectionDate);
-    }
-
     public LocalDateTime findByReceiptDate(String receiptDate) {
         return repository.findByReceiptDate(receiptDate);
     }
@@ -67,8 +68,11 @@ public class PickupService {
         return repository.findByDetails(details);
     }
 
-    public void delete(Pickup entity) {
-        repository.delete(entity);
+    public String findByVolume(String volume) {
+        return repository.findByVolume(volume);
     }
 
+    public LocalDateTime findByCollectionDate(String collectionDate) {
+        return repository.findByCollectionDate(collectionDate);
+    }
 }
